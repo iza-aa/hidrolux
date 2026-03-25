@@ -1,43 +1,55 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ShoppingCart, Plus, Check, MessageCircle } from "lucide-react"
+import { ShoppingCart, Check, MessageCircle, Droplet } from "lucide-react"
 
 type Product = {
   id: string
   name: string
+  tag: string
   category: string
+  price: string
   description: string
-  image?: string
+  imageColor: string
 }
 
 const products: Product[] = [
   {
     id: "p1",
-    name: "Paket Depot Air Minum Mineral Standard",
-    category: "Depot Air",
-    description: "Kapasitas 400 galon/hari. Lengkap dengan etalase dan tandon."
+    tag: "BEST SELLER",
+    name: "Paket Depot Air Minum",
+    category: "Mineral Standard",
+    price: "Mulai Rp 15 Jt",
+    description: "Kapasitas 400 galon/hari. Lengkap etalase dan tandon.",
+    imageColor: "bg-blue-100/50"
   },
   {
     id: "p2",
-    name: "Mesin RO (Reverse Osmosis) 100 GPD",
-    category: "Mesin RO",
-    description: "Sistem filterisasi tingkat tinggi menghasilkan air murni."
+    tag: "POPULAR",
+    name: "Mesin RO 100 GPD",
+    category: "Reverse Osmosis",
+    price: "Rp 3.5 Jt",
+    description: "Sistem filterisasi tingkat tinggi menghasilkan air murni.",
+    imageColor: "bg-emerald-100/50"
   },
   {
     id: "p3",
-    name: "Water Treatment Plant (WTP) Industri",
-    category: "Industri",
-    description: "Pengolahan air limbah/kotor untuk industri skala menengah."
+    tag: "DISCOUNT",
+    name: "Water Treatment Plant",
+    category: "Industri Menengah",
+    price: "Konsultasi",
+    description: "Pengolahan khusus untuk air industri & perumahan.",
+    imageColor: "bg-amber-100/50"
   },
   {
     id: "p4",
-    name: "Mesin AMDK (Air Minum Dalam Kemasan)",
-    category: "AMDK",
-    description: "Mesin cup sealer otomatis untuk produksi massal air kemasan."
+    tag: "NEW ARRIVAL",
+    name: "Mesin Pabrik AMDK",
+    category: "Air Minum Kemasan",
+    price: "Konsultasi",
+    description: "Mesin cup sealer otomatis produksi massal.",
+    imageColor: "bg-purple-100/50"
   }
 ]
 
@@ -54,17 +66,12 @@ export function DaftarProduk() {
 
   const handleWhatsAppCheckout = () => {
     if (selectedProducts.length === 0) return
-
-    const waNumber = "6281234567890" // Ganti dengan nomor WhatsApp Hidrolux
-    
+    const waNumber = "6281234567890" 
     let message = "Halo Hidrolux, saya tertarik dan ingin konsultasi lebih lanjut terkait produk/paket berikut:\n\n"
-    
     selectedProducts.forEach((p, index) => {
-      message += `${index + 1}. ${p.name}\n`
+      message += `${index + 1}. ${p.name} - ${p.category}\n`
     })
-
     message += "\nMohon info detail harga dan spesifikasinya."
-
     const encodedMessage = encodeURIComponent(message)
     window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, "_blank")
   }
@@ -72,78 +79,92 @@ export function DaftarProduk() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-6xl relative">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
-            Daftar Produk & Paket
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Pilih produk yang Anda butuhkan dan diskusikan langsung dengan tim ahli kami via WhatsApp tanpa ribet belanja online.
+        <div className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6 text-center md:text-left">
+          <div>
+            <div className="text-blue-500 font-bold text-xs tracking-widest uppercase mb-2">PRODUK KAMI</div>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Pilihan Terbaik Untuk Anda
+            </h2>
+          </div>
+          <p className="text-slate-500 max-w-md text-sm leading-relaxed">
+            Dapatkan mesin water purifier dengan kualitas internasional untuk berbagai kebutuhan bisnis dan rumah tangga.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-12">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-24">
           {products.map((product) => {
             const isSelected = selectedProducts.some((p) => p.id === product.id)
             return (
-              <Card key={product.id} className={`flex flex-col h-full transition-all ${isSelected ? 'border-blue-500 ring-2 ring-blue-200' : 'border-slate-200'}`}>
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <Badge variant={isSelected ? "default" : "secondary"}>
-                      {product.category}
-                    </Badge>
+              <div 
+                key={product.id} 
+                className={`bg-[#f8f9fa] rounded-3xl p-6 flex flex-col relative transition-all group hover:shadow-lg ${
+                  isSelected ? 'ring-2 ring-blue-500 shadow-md' : 'border border-transparent'
+                }`}
+              >
+                <div className="absolute top-6 left-6 z-10">
+                   <span className={`text-[10px] font-bold tracking-wider ${
+                      product.tag === 'DISCOUNT' ? 'text-red-500' : 'text-blue-500'
+                   }`}>{product.tag}</span>
+                </div>
+
+                <div className="h-48 w-full flex items-center justify-center my-6 relative">
+                  <div className={`w-36 h-36 rounded-full absolute ${product.imageColor} group-hover:scale-110 transition-transform duration-500`}></div>
+                  {/* Placeholder icon since we don't have real images yet */}
+                  <Droplet className="w-16 h-16 text-blue-400 relative z-10 opacity-80" />
+                </div>
+
+                <div className="flex flex-col flex-grow">
+                  <div className="text-xs text-slate-400 mb-1">{product.category}</div>
+                  <h3 className="font-bold text-slate-800 text-lg leading-tight mb-2">{product.name}</h3>
+                  <p className="text-slate-500 text-xs mb-6 flex-grow">{product.description}</p>
+                  
+                  <div className="flex items-center justify-between mt-auto">
+                    <div className="font-bold text-slate-800 text-lg">{product.price}</div>
+                    <Button 
+                      size="sm"
+                      variant={isSelected ? "default" : "outline"}
+                      className={`rounded-xl px-4 py-5 font-semibold text-xs transition-colors ${
+                        isSelected ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-white text-slate-700 border-none shadow-sm hover:text-blue-600"
+                      }`}
+                      onClick={() => toggleProduct(product)}
+                    >
+                      {isSelected ? <Check className="w-4 h-4 mr-1" /> : <ShoppingCart className="w-4 h-4 mr-1" />}
+                      {isSelected ? "TERPILIH" : "PILIH"}
+                    </Button>
                   </div>
-                  <CardTitle className="text-lg leading-tight">{product.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardDescription className="text-slate-600">
-                    {product.description}
-                  </CardDescription>
-                </CardContent>
-                <CardFooter>
-                  <Button 
-                    variant={isSelected ? "outline" : "default"}
-                    className={`w-full ${isSelected ? "text-blue-600 border-blue-200 bg-blue-50 hover:bg-blue-100" : ""}`}
-                    onClick={() => toggleProduct(product)}
-                  >
-                    {isSelected ? (
-                      <><Check className="mr-2 h-4 w-4" /> Terpilih</>
-                    ) : (
-                      <><Plus className="mr-2 h-4 w-4" /> Pilih Produk</>
-                    )}
-                  </Button>
-                </CardFooter>
-              </Card>
+                </div>
+              </div>
             )
           })}
         </div>
 
-        {/* Floating Checkout Summary */}
+        {/* Floating Checkout */}
         {selectedProducts.length > 0 && (
-          <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgb(0,0,0,0.1)] z-50 animate-in slide-in-from-bottom-10">
+          <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-md border-t border-slate-200 shadow-[0_-10px_20px_-5px_rgba(0,0,0,0.05)] z-50 animate-in slide-in-from-bottom-10">
             <div className="container mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="bg-blue-100 p-3 rounded-full relative">
+              <div className="flex items-center gap-4">
+                <div className="bg-blue-50 p-3 rounded-full relative">
                   <ShoppingCart className="text-blue-600 h-6 w-6" />
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
                     {selectedProducts.length}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900">
-                    {selectedProducts.length} Produk Terpilih
+                  <p className="font-bold text-slate-800">
+                    {selectedProducts.length} Mesin/Paket Dipilih
                   </p>
-                  <p className="text-sm text-slate-500 hidden sm:block">
-                    Lanjutkan ke WhatsApp untuk negosiasi & konsultasi
+                  <p className="text-xs text-slate-500 hidden sm:block">
+                    Siap untuk dikonsultasikan via WhatsApp
                   </p>
                 </div>
               </div>
               
               <Button 
                 onClick={handleWhatsAppCheckout} 
-                className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-semibold py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+                className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
               >
                 <MessageCircle className="h-5 w-5" />
-                Lanjutkan via WhatsApp
+                Lanjutkan ke WhatsApp
               </Button>
             </div>
           </div>
