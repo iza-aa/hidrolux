@@ -47,8 +47,8 @@ export function Navbar() {
 
         <nav className="hidden md:flex items-center gap-8 font-bold text-[14px] text-slate-600">
           <a href="#peluang" className="hover:text-brand-blue transition-colors">Peluang Bisnis</a>
-          <a href="#produk" className="hover:text-brand-blue transition-colors">Produk</a>
           <a href="#kenapa-kami" className="hover:text-brand-blue transition-colors">Keunggulan</a>
+          <a href="#produk" className="hover:text-brand-blue transition-colors">Produk</a>
           <a href="#faq" className="hover:text-brand-blue transition-colors">FAQ</a>
         </nav>
 
