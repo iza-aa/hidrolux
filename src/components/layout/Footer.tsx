@@ -17,6 +17,15 @@ export function Footer() {
     }
   }, [])
 
+  useEffect(() => {
+    if (showConsent) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => { document.body.style.overflow = "" }
+  }, [showConsent])
+
   function handleAccept() {
     localStorage.setItem("hidro-consent", "accepted")
     setShowConsent(false)
@@ -107,8 +116,8 @@ export function Footer() {
 
     {/* Privacy Policy Bottom Sheet */}
     {modal === "privacy" && (
-      <div className="fixed inset-0 z-50 flex flex-col justify-start" onClick={() => setModal(null)}>
-        <div className="absolute inset-0 bg-black/30" />
+      <div className="fixed inset-0 z-60 flex flex-col justify-start" onClick={() => setModal(null)}>
+        <div className={`absolute inset-0 ${showConsent ? "bg-transparent" : "bg-black/30"}`} />
         <div
           className="relative bg-white w-full animate-in slide-in-from-top-4 duration-300"
           onClick={(e) => e.stopPropagation()}
@@ -142,8 +151,8 @@ export function Footer() {
 
     {/* Consent Banner */}
     {showConsent && (
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom-4 duration-500">
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 flex flex-col md:flex-row items-start md:items-center gap-4">
+      <div className="fixed inset-0 z-50 flex items-end justify-center p-4 md:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300" aria-modal="true">
+        <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 flex flex-col md:flex-row items-start md:items-center gap-4 animate-in slide-in-from-bottom-4 duration-500">
           <div className="flex-1 text-sm text-slate-600 leading-relaxed">
             <p className="font-semibold text-slate-800 mb-1">Kami menggunakan data Anda</p>
             <p>Website ini menggunakan data kunjungan untuk keperluan analitik dan iklan. Dengan melanjutkan, Anda menyetujui{" "}
