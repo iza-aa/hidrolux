@@ -1,52 +1,82 @@
-import { MapPin, Phone, Mail } from "lucide-react"
+import { MapPin, Phone, MessageCircle, Droplet } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800 pb-28 md:pb-12">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-[#0D2035] text-slate-300 py-8 border-t border-brand-blue/30 pb-16 md:pb-8">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white tracking-tight">
-              Hidrolux<span className="text-blue-500">.</span>
-            </h3>
-            <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
-              Solusi One-Stop Water Purifier. Menyediakan mesin depot air minum isi ulang, RO, AMDK, dan WTP dengan standar internasional berkualitas tinggi.
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="bg-brand-blue p-2.5 rounded-xl">
+                <Droplet className="w-6 h-6 text-white" strokeWidth={2.5} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-tight text-white leading-none">Hidro</span>
+                <span className="text-[9px] font-bold text-brand-light tracking-widest uppercase mt-1">One Stop Solution</span>
+              </div>
+            </div>
+            <p className="text-sm text-slate-400 max-w-sm leading-relaxed font-medium">
+              Solusi One-Stop Water Purifier. Menyediakan mesin depot air minum isi ulang, RO, AMDK, dan WTP dengan standar internasional berkualitas tinggi dan tahan lama.
             </p>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Hubungi Kami</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-                <span>+62 812-3456-7890</span>
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold text-white tracking-wide">Hubungi Kami</h4>
+            <ul className="space-y-4 text-sm text-slate-400 font-medium">
+              <li className="flex items-center gap-4 hover:text-white transition-colors cursor-pointer group">
+                <div className="bg-brand-blue/20 p-2 rounded-lg group-hover:bg-brand-blue transition-colors">
+                  <Phone className="w-4 h-4 text-brand-light" />
+                </div>
+                <span>+62 898-5919-009</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-blue-500 shrink-0" />
-                <span>info@hidrolux.id</span>
+              <li className="flex items-center gap-4 hover:text-white transition-colors cursor-pointer group">
+                <a href="https://wa.me/628985919009" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 w-full">
+                  <div className="bg-[#25D366]/20 p-2 rounded-lg group-hover:bg-[#25D366] transition-colors">
+                    <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  </div>
+                  <span>WhatsApp Hidro</span>
+                </a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-blue-500 shrink-0" />
-                <span>Jl. Contoh Alamat Pabrik No. 123, Kota, Provinsi, Indonesia</span>
+              <li className="flex items-center gap-4 hover:text-white transition-colors cursor-pointer group">
+                <div className="bg-brand-blue/20 p-2 rounded-lg group-hover:bg-brand-blue transition-colors">
+                  <MapPin className="w-4 h-4 text-brand-light shrink-0" />
+                </div>
+                <span className="leading-relaxed">Jl. Raya Kudus - Jepara No.KM 5, Kedungdowo, Mijen, Kec. Kaliwungu, Kabupaten Kudus, Jawa Tengah 59332</span>
               </li>
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Layanan</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>Instalasi Seluruh Indonesia</li>
-              <li>Service & Maintenance</li>
-              <li>Sparepart Lengkap</li>
-              <li>Konsultasi Bisnis Depot Air</li>
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold text-white tracking-wide">Layanan Purna Jual</h4>
+            <ul className="space-y-4 text-sm text-slate-400 font-medium">
+              <li className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-light"></div> 
+                Instalasi Seluruh Indonesia
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-light"></div> 
+                Service & Maintenance
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-light"></div> 
+                Ketersediaan Sparepart
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-pink"></div> 
+                <span className="text-brand-pink font-semibold">Gratis Konsultasi & Training</span>
+              </li>
             </ul>
           </div>
           
         </div>
 
-        <div className="border-t border-slate-800 pt-8 mt-8 text-center text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Hidrolux. All rights reserved.</p>
+        <div className="border-t border-brand-blue/20 pt-8 text-center text-xs font-bold tracking-wider text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4 uppercase">
+          <p>&copy; {new Date().getFullYear()} HIDRO WATER PURIFIER.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-brand-light transition-colors">PRIVACY POLICY</a>
+            <a href="#" className="hover:text-brand-light transition-colors">TERMS OF SERVICE</a>
+          </div>
         </div>
       </div>
     </footer>

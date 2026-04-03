@@ -2,11 +2,11 @@ import { Droplet, TrendingUp, ShieldCheck } from "lucide-react"
 
 export function PeluangBisnis() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="pt-10 pb-0 bg-white">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
           <div>
-            <div className="text-blue-500 font-bold text-xs tracking-widest uppercase mb-2">POTENSI PASAR</div>
+            <div className="text-brand-blue font-bold text-xs tracking-widest uppercase mb-2">POTENSI PASAR</div>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               Kenapa Membuka Depot Air?
             </h2>
@@ -16,11 +16,11 @@ export function PeluangBisnis() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {/* Card 1 */}
-          <div className="bg-[#f8f9fa] rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300">
-            <div className="bg-blue-100/50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <Droplet className="w-8 h-8 text-blue-500" />
+          <div className="bg-brand-light-bg border border-brand-light rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300">
+            <div className="bg-brand-blue w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+              <Droplet className="w-7 h-7 text-white" />
             </div>
             <h3 className="font-bold text-slate-800 text-xl mb-3">Kebutuhan Pokok</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
@@ -29,9 +29,9 @@ export function PeluangBisnis() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#f8f9fa] rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300">
-            <div className="bg-emerald-100/50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <TrendingUp className="w-8 h-8 text-emerald-500" />
+          <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300">
+            <div className="bg-brand-blue w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+              <TrendingUp className="w-7 h-7 text-white" />
             </div>
             <h3 className="font-bold text-slate-800 text-xl mb-3">Permintaan Tinggi</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
@@ -40,9 +40,9 @@ export function PeluangBisnis() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#f8f9fa] rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300">
-            <div className="bg-amber-100/50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <ShieldCheck className="w-8 h-8 text-amber-500" />
+          <div className="rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300" style={{ backgroundColor: "#FBF6F8", border: "1.5px solid #F6D2E2" }}>
+            <div className="bg-brand-pink w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+              <ShieldCheck className="w-7 h-7 text-white" />
             </div>
             <h3 className="font-bold text-slate-800 text-xl mb-3">Investasi Aman</h3>
             <p className="text-slate-500 text-sm leading-relaxed">

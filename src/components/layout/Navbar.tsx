@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
+import Link from "next/link"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -18,26 +19,29 @@ export function Navbar() {
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
+        isScrolled ? "bg-white/95 backdrop-blur-md py-4 border-b border-brand-light" : "bg-white/50 backdrop-blur-sm py-6"
       }`}
     >
-      <div className="container mx-auto px-4 max-w-6xl flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          {/* Anda bisa ganti teks ini dengan tag <img src="/logo.png" /> nantinya */}
-          <div className="text-2xl font-bold tracking-tighter text-blue-600">
-            Hidrolux<span className="text-slate-900">.</span>
+      <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center">
+        
+        <Link href="/" className="flex flex-col leading-none group">
+          <div className="flex items-baseline">
+            <span className="text-2xl font-black tracking-tight text-slate-900">HID</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: "#E93468" }}>RO</span>
           </div>
-        </div>
+          <div className="h-0.5 w-full rounded-full bg-slate-900 my-0.5"></div>
+          <span className="text-[8px] font-bold text-slate-900 tracking-widest uppercase">WATER TREATMENT SYSTEM</span>
+        </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
-          <a href="#peluang" className="hover:text-blue-600 transition-colors">Peluang Bisnis</a>
-          <a href="#produk" className="hover:text-blue-600 transition-colors">Produk</a>
-          <a href="#kenapa-kami" className="hover:text-blue-600 transition-colors">Keunggulan</a>
-          <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
+        <nav className="hidden md:flex items-center gap-8 font-bold text-[14px] text-slate-600">
+          <a href="#peluang" className="hover:text-brand-blue transition-colors">Peluang Bisnis</a>
+          <a href="#produk" className="hover:text-brand-blue transition-colors">Produk</a>
+          <a href="#kenapa-kami" className="hover:text-brand-blue transition-colors">Keunggulan</a>
+          <a href="#faq" className="hover:text-brand-blue transition-colors">FAQ</a>
         </nav>
 
         <div>
-           <Button className="rounded-full bg-blue-600 hover:bg-blue-700 font-semibold shadow-sm">
+           <Button className="rounded-full bg-brand-pink hover:bg-brand-pink/90 text-white font-bold px-6 transition-all">
              <Phone className="mr-2 h-4 w-4" /> Hubungi Kami
            </Button>
         </div>

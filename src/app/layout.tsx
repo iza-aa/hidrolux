@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Mengganti font bawaan (Geist) menjadi Plus Jakarta Sans yang sangat elegan, geometris, dan profesional
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Hidrolux - One Stop Solution of Water Purifier",
+  title: "Hidro - One Stop Solution of Water Purifier",
   description: "Solusi terbaik mesin depot air minum. Mesin berstandar internasional, awet, dan lolos uji kelayakan DEPKES RI.",
-  keywords: ["depot air minum", "mesin RO", "pabrik air minum", "water purifier", "hidrolux", "mesin AMDK", "peluang bisnis air"],
+  keywords: ["depot air minum", "mesin RO", "pabrik air minum", "water purifier", "hidro", "mesin AMDK", "peluang bisnis air"],
 };
 
 export default function RootLayout({
@@ -27,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${jakarta.className} antialiased flex flex-col min-h-screen text-slate-800`}>
         <Navbar />
-        <div className="flex-grow pt-[80px]">
+        <div className="grow pt-20">
           {children}
         </div>
         <Footer />
