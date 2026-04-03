@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     "mesin water purifier",
     "hidro water treatment",
     "peluang bisnis depot air",
-    "mesin depot air kudus",
     "jual mesin depot air",
     "harga mesin depot air minum",
     "mesin WTP",

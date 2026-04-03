@@ -45,14 +45,14 @@ export function BannerPemasangan() {
       <div className="hidden md:flex relative z-10 pr-8 gap-2 shrink-0">
         <div className="flex flex-col gap-2">
           <div className="w-28 h-28 rounded-2xl overflow-hidden relative">
-            <Image src="/hidro1.jpeg" alt="Pengiriman depot" fill className="object-cover" />
+            <Image src="/hidro1.jpeg" alt="Pengiriman depot" fill sizes="112px" className="object-cover" />
           </div>
           <div className="w-28 h-20 rounded-2xl overflow-hidden relative">
-            <Image src="/hidro3.jpeg" alt="Pemasangan etalase" fill className="object-cover" />
+            <Image src="/hidro3.jpeg" alt="Pemasangan etalase" fill sizes="112px" className="object-cover" />
           </div>
         </div>
         <div className="w-32 h-52 rounded-2xl overflow-hidden relative self-center">
-          <Image src="/hidro2.jpeg" alt="Tim teknisi" fill className="object-cover" />
+          <Image src="/hidro2.jpeg" alt="Tim teknisi" fill sizes="128px" className="object-cover" />
         </div>
       </div>
     </div>

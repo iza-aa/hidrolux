@@ -119,7 +119,11 @@ export function DaftarProduk() {
     })
     message += "\nMohon info detail harga dan spesifikasinya."
     const encodedMessage = encodeURIComponent(message)
-    window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, "_blank")
+    const a = document.createElement("a")
+    a.href = `https://wa.me/${waNumber}?text=${encodedMessage}`
+    a.target = "_blank"
+    a.rel = "noopener noreferrer"
+    a.click()
   }
 
   return (
