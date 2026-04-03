@@ -74,11 +74,11 @@ export function AnalisaKeuntungan() {
             {activeCard === "perhitungan" && (
               <>
                 <div className="flex items-center justify-between pb-5 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-brand-blue p-2.5 rounded-xl">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="bg-brand-blue p-2.5 rounded-xl shrink-0">
                       <Calculator className="w-5 h-5 text-white" />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900">Simulasi Keuntungan Depot Air</h4>
+                    <h4 className="text-base md:text-xl font-bold text-slate-900 leading-tight">Simulasi Keuntungan Depot Air</h4>
                   </div>
                   <button onClick={() => setActiveCard(null)} className="text-slate-400 hover:text-slate-700 transition-colors p-1">
                     <X className="w-5 h-5" />
@@ -90,7 +90,7 @@ export function AnalisaKeuntungan() {
                     <p className="text-xs font-bold text-brand-blue uppercase tracking-wider mb-1">Air Baku — 1 Tangki</p>
                     <p className="text-slate-500 text-sm">8.000 Lt / 400 Galon</p>
                   </div>
-                  <p className="font-extrabold text-brand-blue text-xl">Rp 600.000</p>
+                  <p className="font-extrabold text-brand-blue text-base md:text-xl shrink-0">Rp 600.000</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-2xl overflow-hidden mb-6">
@@ -98,21 +98,21 @@ export function AnalisaKeuntungan() {
                     <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Biaya per Galon</p>
                   </div>
                   <div className="divide-y divide-gray-100">
-                    <div className="flex justify-between items-center px-6 py-3 text-sm text-slate-600">
-                      <span>Air Baku (Rp 600.000 / 400)</span>
-                      <span className="font-semibold">Rp 1.500</span>
+                    <div className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
+                      <span className="leading-tight">Air Baku (Rp 600.000 / 400)</span>
+                      <span className="font-semibold shrink-0">Rp 1.500</span>
                     </div>
-                    <div className="flex justify-between items-center px-6 py-3 text-sm text-slate-600">
+                    <div className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
                       <span>Tutup Galon + Tissue</span>
-                      <span className="font-semibold">+/- Rp 200</span>
+                      <span className="font-semibold shrink-0">+/- Rp 200</span>
                     </div>
-                    <div className="flex justify-between items-center px-6 py-3 text-sm text-slate-600">
+                    <div className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
                       <span>Listrik</span>
-                      <span className="font-semibold">+/- Rp 50</span>
+                      <span className="font-semibold shrink-0">+/- Rp 50</span>
                     </div>
-                    <div className="flex justify-between items-center px-6 py-4 bg-brand-light-bg">
+                    <div className="flex justify-between items-center px-4 md:px-6 py-4 bg-brand-light-bg gap-4">
                       <span className="font-bold text-slate-900">Total Modal / Galon</span>
-                      <span className="font-extrabold text-brand-pink text-lg">Rp 1.750</span>
+                      <span className="font-extrabold text-brand-pink text-base md:text-lg shrink-0">Rp 1.750</span>
                     </div>
                   </div>
                 </div>
@@ -132,18 +132,18 @@ export function AnalisaKeuntungan() {
 
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Proyeksi @ 50 Galon / Hari</p>
-                  <div className="grid grid-cols-3 gap-3 text-center">
-                    <div className="bg-brand-light-bg border border-brand-light rounded-2xl py-4 px-2">
-                      <p className="text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-2">Sehari</p>
-                      <p className="font-extrabold text-brand-blue text-lg">Rp 162.500</p>
+                  <div className="grid grid-cols-3 gap-2 md:gap-3 text-center">
+                    <div className="bg-brand-light-bg border border-brand-light rounded-2xl py-3 md:py-4 px-1 md:px-2">
+                      <p className="text-[9px] md:text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-1 md:mb-2">Sehari</p>
+                      <p className="font-extrabold text-brand-blue text-sm md:text-lg">Rp 162.500</p>
                     </div>
-                    <div className="bg-brand-light-bg border border-brand-light rounded-2xl py-4 px-2">
-                      <p className="text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-2">Seminggu</p>
-                      <p className="font-extrabold text-brand-blue text-lg">Rp 1.137.500</p>
+                    <div className="bg-brand-light-bg border border-brand-light rounded-2xl py-3 md:py-4 px-1 md:px-2">
+                      <p className="text-[9px] md:text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-1 md:mb-2">Seminggu</p>
+                      <p className="font-extrabold text-brand-blue text-sm md:text-lg">Rp 1,1 Jt</p>
                     </div>
-                    <div className="bg-brand-pink rounded-2xl py-4 px-2">
-                      <p className="text-[10px] font-bold text-white/80 uppercase tracking-wider mb-2">Sebulan</p>
-                      <p className="font-extrabold text-white text-lg">Rp 4.875.000</p>
+                    <div className="bg-brand-pink rounded-2xl py-3 md:py-4 px-1 md:px-2">
+                      <p className="text-[9px] md:text-[10px] font-bold text-white/80 uppercase tracking-wider mb-1 md:mb-2">Sebulan</p>
+                      <p className="font-extrabold text-white text-sm md:text-lg">Rp 4,8 Jt</p>
                     </div>
                   </div>
                 </div>

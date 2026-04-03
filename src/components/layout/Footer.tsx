@@ -1,20 +1,39 @@
-import { MapPin, Phone, MessageCircle, Droplet } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { MapPin, Phone, MessageCircle, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export function Footer() {
+  const [modal, setModal] = useState<"privacy" | null>(null)
+  const [showConsent, setShowConsent] = useState(() => {
+    if (typeof window === "undefined") return false
+    return !localStorage.getItem("hidro-consent")
+  })
+
+  function handleAccept() {
+    localStorage.setItem("hidro-consent", "accepted")
+    setShowConsent(false)
+  }
+
+  function handleDecline() {
+    window.location.href = "https://www.google.com"
+  }
+
   return (
-    <footer className="bg-[#0D2035] text-slate-300 py-8 border-t border-brand-blue/30 pb-16 md:pb-8">
+    <>
+    <footer className="bg-brand-navy text-slate-300 py-8 border-t border-brand-blue/30 pb-16 md:pb-8">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="bg-brand-blue p-2.5 rounded-xl">
-                <Droplet className="w-6 h-6 text-white" strokeWidth={2.5} />
+            <div className="flex flex-col leading-none w-fit">
+              <div className="flex items-baseline">
+                <span className="text-2xl font-black tracking-tight text-white">HID</span>
+                <span className="text-2xl font-black tracking-tight" style={{ color: "#C24B53" }}>RO</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-black tracking-tight text-white leading-none">Hidro</span>
-                <span className="text-[9px] font-bold text-brand-light tracking-widest uppercase mt-1">One Stop Solution</span>
-              </div>
+              <div className="h-0.5 w-full rounded-full bg-white/60 my-0.5"></div>
+              <span className="text-[8px] font-bold text-white/60 tracking-widest uppercase">WATER TREATMENT SYSTEM</span>
             </div>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed font-medium">
               Solusi One-Stop Water Purifier. Menyediakan mesin depot air minum isi ulang, RO, AMDK, dan WTP dengan standar internasional berkualitas tinggi dan tahan lama.
@@ -72,13 +91,77 @@ export function Footer() {
         </div>
 
         <div className="border-t border-brand-blue/20 pt-8 text-center text-xs font-bold tracking-wider text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4 uppercase">
-          <p>&copy; {new Date().getFullYear()} HIDRO WATER PURIFIER.</p>
+          <p>&copy; {new Date().getFullYear()} HIDRO WATER TREATMENT SYSTEM.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-brand-light transition-colors">PRIVACY POLICY</a>
-            <a href="#" className="hover:text-brand-light transition-colors">TERMS OF SERVICE</a>
+            <button onClick={() => setModal("privacy")} className="hover:text-brand-light transition-colors">PRIVACY POLICY</button>
           </div>
         </div>
       </div>
     </footer>
+
+    {/* Privacy Policy Bottom Sheet */}
+    {modal === "privacy" && (
+      <div className="fixed inset-0 z-50 flex flex-col justify-start" onClick={() => setModal(null)}>
+        <div className="absolute inset-0 bg-black/30" />
+        <div
+          className="relative bg-white w-full animate-in slide-in-from-top-4 duration-300"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="max-w-4xl mx-auto px-6 py-5">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-bold text-slate-900 uppercase tracking-widest">Kebijakan Privasi</h2>
+              <button onClick={() => setModal(null)} className="text-slate-400 hover:text-slate-700 transition-colors p-1">
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="text-xs text-slate-500 leading-relaxed grid md:grid-cols-3 gap-4">
+              <div>
+                <p className="font-semibold text-slate-700 mb-1">Data yang Dikumpulkan</p>
+                <p>Kami hanya mengumpulkan nama, nomor telepon, dan alamat yang Anda berikan sukarela melalui WhatsApp.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-slate-700 mb-1">Penggunaan Data</p>
+                <p>Data digunakan untuk memproses pesanan, koordinasi pengiriman, pemasangan, dan layanan purna jual.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-slate-700 mb-1">Hak Anda</p>
+                <p>Anda berhak meminta penghapusan data kapan saja. Hubungi kami via WhatsApp +62 898-5919-009.</p>
+              </div>
+            </div>
+            <p className="text-[10px] text-slate-400 mt-3">Terakhir diperbarui: April 2026 &middot; Hidro Water Treatment System</p>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Consent Banner */}
+    {showConsent && (
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom-4 duration-500">
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 flex flex-col md:flex-row items-start md:items-center gap-4">
+          <div className="flex-1 text-sm text-slate-600 leading-relaxed">
+            <p className="font-semibold text-slate-800 mb-1">Kami menggunakan data Anda</p>
+            <p>Website ini menggunakan data kunjungan untuk keperluan analitik dan iklan. Dengan melanjutkan, Anda menyetujui{" "}
+              <button onClick={() => setModal("privacy")} className="text-brand-blue underline hover:no-underline font-medium">Kebijakan Privasi</button>
+            {" "}kami.</p>
+          </div>
+          <div className="flex gap-3 shrink-0 w-full md:w-auto">
+            <Button
+              onClick={handleDecline}
+              variant="outline"
+              className="flex-1 md:flex-none rounded-full border-gray-200 text-slate-500 hover:text-slate-700"
+            >
+              Tolak
+            </Button>
+            <Button
+              onClick={handleAccept}
+              className="flex-1 md:flex-none rounded-full bg-brand-blue hover:bg-brand-blue/90 text-white"
+            >
+              Terima
+            </Button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   )
 }
