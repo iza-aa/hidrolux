@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Hidro Water Treatment System",
     images: [
       {
-        url: "/logo.jpeg",
+        url: "/icon.jpeg",
         width: 800,
         height: 600,
         alt: "Hidro Water Treatment System - Mesin Depot Air Minum",
