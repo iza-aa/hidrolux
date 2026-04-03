@@ -1,19 +1,25 @@
 "use client"
 
-import { useState, useSyncExternalStore } from "react"
+import { useState, useEffect, useRef, startTransition } from "react"
 import { MapPin, Phone, MessageCircle, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
   const [modal, setModal] = useState<"privacy" | null>(null)
-  const showConsent = useSyncExternalStore(
-    () => () => {},
-    () => !localStorage.getItem("hidro-consent"),
-    () => false
-  )
+  const [showConsent, setShowConsent] = useState(false)
+  const hasMounted = useRef(false)
+
+  useEffect(() => {
+    if (hasMounted.current) return
+    hasMounted.current = true
+    if (!localStorage.getItem("hidro-consent")) {
+      startTransition(() => setShowConsent(true))
+    }
+  }, [])
 
   function handleAccept() {
     localStorage.setItem("hidro-consent", "accepted")
+    setShowConsent(false)
   }
 
   function handleDecline() {
