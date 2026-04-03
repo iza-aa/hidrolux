@@ -3,20 +3,20 @@ import { MapPin, Truck, Wrench } from "lucide-react"
 
 export function BannerPemasangan() {
   return (
-    <div className="w-full h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
+    <div className="w-full min-h-44 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
       {/* Decorative */}
       <div className="absolute right-[-20px] top-[-20px] w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>
 
       {/* Left content */}
-      <div className="relative z-10 px-8 md:px-14 py-6 flex-1 min-w-0">
-        <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase" style={{ backgroundColor: "#F6D2E2", color: "#E93468" }}>
+      <div className="relative z-10 px-6 md:px-14 py-4 md:py-6 flex-1 min-w-0">
+        <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase" style={{ backgroundColor: "#D8D7DC", color: "#C24B53" }}>
           JASA PEMASANGAN
         </div>
         <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-2" style={{ color: "#0D2035" }}>
           Pengiriman &amp; Instalasi<br/>
           <span style={{ color: "#3483C2" }}>Seluruh Indonesia</span>
         </h2>
-        <p className="text-xs text-slate-500 mb-4 max-w-xs leading-relaxed">
+        <p className="text-xs text-slate-500 mb-3 max-w-xs leading-relaxed">
           Dari Sabang sampai Merauke — tim teknisi profesional kami siap hadir langsung ke lokasi Anda.
         </p>
         <div className="flex flex-wrap gap-3">
@@ -27,7 +27,7 @@ export function BannerPemasangan() {
             <span className="text-xs font-semibold text-slate-700">Pengiriman Aman</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#E93468" }}>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#C24B53" }}>
               <Wrench className="w-4 h-4 text-white" />
             </div>
             <span className="text-xs font-semibold text-slate-700">Pasang di Lokasi</span>

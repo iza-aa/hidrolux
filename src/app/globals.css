@@ -8,10 +8,12 @@
   /* Hidrolux Brand Colors */
   --color-brand-light: #AFD8DD;
   --color-brand-blue: #3483C2;
-  --color-brand-pink: #E93468;
+  --color-brand-navy: #0D2035;
+  --color-brand-navy-mid: #1a3a5c;
+  --color-brand-pink: #C24B53;
   --color-brand-light-bg: #EDF7F9;
-  --color-brand-pink-light: #F6D2E2;
-  --color-brand-pink-bg: #FBF6F8;
+  --color-brand-pink-light: #D8D7DC;
+  --color-brand-pink-bg: #E05363;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -131,8 +133,18 @@
   }
   body {
     @apply bg-background text-foreground;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   html {
     @apply font-sans;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar {
+    display: none;
   }
 }

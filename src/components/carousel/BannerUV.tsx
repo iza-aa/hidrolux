@@ -5,13 +5,13 @@ export function BannerUV() {
     <div className="w-full h-[220px] md:h-[280px] rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#0D2035" }}>
       {/* Decorative */}
       <div className="absolute left-[-30px] bottom-[-30px] w-48 h-48 rounded-full opacity-10" style={{ backgroundColor: "#AFD8DD" }}></div>
-      <div className="absolute right-[30%] top-[-20px] w-32 h-32 rounded-full opacity-10" style={{ backgroundColor: "#F6D2E2" }}></div>
+      <div className="absolute right-[30%] top-[-20px] w-32 h-32 rounded-full opacity-10" style={{ backgroundColor: "#D8D7DC" }}></div>
 
       {/* Left: warning title */}
       <div className="relative z-10 px-8 md:px-14 py-8 w-full">
         <div className="flex items-center gap-2 mb-3">
-          <AlertTriangle className="w-5 h-5" style={{ color: "#E93468" }} />
-          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#E93468" }}>PENTING — EDUKASI KONSUMEN</span>
+          <AlertTriangle className="w-5 h-5" style={{ color: "#C24B53" }} />
+          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#C24B53" }}>PENTING — EDUKASI KONSUMEN</span>
         </div>
         <h2 className="text-xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
           Hati-Hati Sterilisasi UV!<br/>
@@ -38,7 +38,7 @@ export function BannerUV() {
 
           {/* UV Hidro */}
           <div className="rounded-2xl p-4 relative" style={{ backgroundColor: "rgba(52,131,194,0.2)", border: "1px solid #3483C2" }}>
-            <div className="absolute -top-2 -right-2 text-[9px] font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#E93468", color: "white" }}>
+            <div className="absolute -top-2 -right-2 text-[9px] font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#C24B53", color: "white" }}>
               STANDAR HIDRO
             </div>
             <div className="flex items-center gap-2 mb-2">

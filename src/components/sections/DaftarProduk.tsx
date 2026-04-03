@@ -68,7 +68,7 @@ const products: Product[] = [
     category: "Air Minum Dalam Kemasan",
     description: "Mesin cup sealer otomatis untuk produksi air minum kemasan massal.",
     icon: <Package className="w-14 h-14 text-white/90" />,
-    gradient: "from-[#E93468] to-[#3483C2]"
+    gradient: "from-[#C24B53] to-[#3483C2]"
   },
   {
     id: "p7",
@@ -86,7 +86,7 @@ const products: Product[] = [
     category: "After-Sales",
     description: "Teknisi berpengalaman siap menangani perawatan dan perbaikan mesin water purifier.",
     icon: <Headphones className="w-14 h-14 text-white/90" />,
-    gradient: "from-[#E93468] to-[#F6D2E2]"
+    gradient: "from-[#C24B53] to-[#D8D7DC]"
   }
 ]
 
@@ -117,7 +117,7 @@ export function DaftarProduk() {
     <section className="py-10 bg-white">
       <div className="container mx-auto px-4 max-w-7xl relative">
         <div className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6 text-center md:text-left">
-          <div>
+          <div className="w-full md:w-auto">
             <div className="text-brand-blue font-bold text-xs tracking-widest uppercase mb-2">PRODUK KAMI</div>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               Pilihan Terbaik Untuk Anda

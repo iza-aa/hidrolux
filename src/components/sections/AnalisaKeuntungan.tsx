@@ -40,29 +40,29 @@ export function AnalisaKeuntungan() {
           </div>
 
           {/* Banner 2: Edukasi UV */}
-          <div className={`bg-brand-pink-light rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-90 transition-all border ${activeCard === "perbandingan" ? "border-brand-pink" : "border-brand-pink-light"}`}>
+          <div className={`rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-90 transition-all border ${activeCard === "perbandingan" ? "border-brand-blue" : "border-brand-navy-mid"}`} style={{ background: "linear-gradient(135deg, #0D2035 0%, #1a3a5c 60%, #3483C2 100%)" }}>
             <div className="absolute top-0 right-0 p-8">
-              <div className="bg-brand-pink text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12">
+              <div className="bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12">
                 PENTING!
               </div>
             </div>
             <div className="relative z-10">
-              <div className="text-brand-pink font-bold text-xs tracking-widest uppercase mb-3">EDUKASI KONSUMEN</div>
-              <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight leading-tight">
+              <div className="text-brand-light font-bold text-xs tracking-widest uppercase mb-3">EDUKASI KONSUMEN</div>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight leading-tight">
                 Hati-Hati<br/>Sterilisasi UV
               </h3>
-              <p className="text-slate-500 mb-8 max-w-xs text-sm leading-relaxed">
+              <p className="text-blue-100/70 mb-8 max-w-xs text-sm leading-relaxed">
                 Jangan terkecoh depot murah. Kenali perbedaan UV lokal dan UV standar medis.
               </p>
               <Button
                 onClick={() => toggle("perbandingan")}
-                className="bg-brand-pink hover:bg-brand-pink/90 text-white rounded-full px-8 py-6 h-auto font-semibold flex items-center gap-2 w-fit transition-all"
+                className="bg-brand-blue hover:bg-brand-blue/90 text-white rounded-full px-8 py-6 h-auto font-semibold flex items-center gap-2 w-fit transition-all"
               >
                 <AlertTriangle className="w-5 h-5" />
                 {activeCard === "perbandingan" ? "Tutup" : "Lihat Perbandingan"}
               </Button>
             </div>
-            <div className="absolute left-[-10%] bottom-[-10%] w-64 h-64 bg-brand-pink/10 rounded-full"></div>
+            <div className="absolute left-[-10%] bottom-[-10%] w-64 h-64 bg-brand-light/10 rounded-full"></div>
           </div>
         </div>
 
@@ -73,7 +73,7 @@ export function AnalisaKeuntungan() {
             {/* PERHITUNGAN */}
             {activeCard === "perhitungan" && (
               <>
-                <div className="flex items-center justify-between pb-5 border-b border-brand-light mb-8">
+                <div className="flex items-center justify-between pb-5 mb-6">
                   <div className="flex items-center gap-3">
                     <div className="bg-brand-blue p-2.5 rounded-xl">
                       <Calculator className="w-5 h-5 text-white" />
@@ -153,7 +153,7 @@ export function AnalisaKeuntungan() {
             {/* PERBANDINGAN */}
             {activeCard === "perbandingan" && (
               <>
-                <div className="flex items-center justify-between pb-5 border-b border-brand-light mb-8">
+                <div className="flex items-center justify-between pb-5 mb-6">
                   <div className="flex items-center gap-3">
                     <div className="bg-brand-pink p-2.5 rounded-xl">
                       <AlertTriangle className="w-5 h-5 text-white" />
@@ -180,10 +180,10 @@ export function AnalisaKeuntungan() {
                   </div>
 
                   <div className="border border-brand-blue rounded-2xl overflow-hidden relative">
-                    <div className="absolute -top-3 -right-3 bg-brand-pink text-white text-[10px] font-bold px-3 py-1 rounded-full">STANDAR HIDRO</div>
                     <div className="bg-brand-blue px-5 py-4 flex items-center gap-3">
                       <CheckCircle2 className="text-brand-light w-6 h-6" />
                       <h4 className="font-bold text-white text-base">UV Hidro</h4>
+                      <span className="ml-auto bg-brand-pink text-white text-[10px] font-bold px-3 py-1 rounded-full">STANDAR HIDRO</span>
                     </div>
                     <ul className="divide-y divide-brand-light/30">
                       <li className="flex items-start gap-3 px-5 py-3 text-sm text-slate-700 bg-brand-light-bg"><span className="text-brand-blue font-bold mt-0.5 shrink-0">v</span> Housing UV stainless murni 304 tebal.</li>

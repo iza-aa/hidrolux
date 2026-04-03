@@ -27,7 +27,7 @@ export function Navbar() {
         <Link href="/" className="flex flex-col leading-none group">
           <div className="flex items-baseline">
             <span className="text-2xl font-black tracking-tight text-slate-900">HID</span>
-            <span className="text-2xl font-black tracking-tight" style={{ color: "#E93468" }}>RO</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: "#C24B53" }}>RO</span>
           </div>
           <div className="h-0.5 w-full rounded-full bg-slate-900 my-0.5"></div>
           <span className="text-[8px] font-bold text-slate-900 tracking-widest uppercase">WATER TREATMENT SYSTEM</span>

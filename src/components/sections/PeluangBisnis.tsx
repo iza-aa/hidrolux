@@ -40,12 +40,12 @@ export function PeluangBisnis() {
           </div>
 
           {/* Card 3 */}
-          <div className="rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300" style={{ backgroundColor: "#FBF6F8", border: "1.5px solid #F6D2E2" }}>
-            <div className="bg-brand-pink w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+          <div className="rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300" style={{ background: "linear-gradient(135deg, #0D2035 0%, #1a3a5c 60%, #3483C2 100%)", border: "1.5px solid #3483C2" }}>
+            <div className="bg-brand-blue w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
               <ShieldCheck className="w-7 h-7 text-white" />
             </div>
-            <h3 className="font-bold text-slate-800 text-xl mb-3">Investasi Aman</h3>
-            <p className="text-slate-500 text-sm leading-relaxed">
+            <h3 className="font-bold text-white text-xl mb-3">Investasi Aman</h3>
+            <p className="text-blue-100/70 text-sm leading-relaxed">
               Resiko sangat rendah. Modal yang dikeluarkan relatif aman dengan potensi perputaran profit dan keuntungan yang cepat (ROI).
             </p>
           </div>

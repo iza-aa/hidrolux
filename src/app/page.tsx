@@ -16,8 +16,8 @@ export default function Home() {
           <div className="bg-brand-light-bg rounded-[32px] px-8 py-4 md:px-14 md:py-6 relative overflow-hidden">
 
             {/* Decorative rings */}
-            <div className="absolute right-[-4%] top-1/2 -translate-y-1/2 w-96 h-96 border-32 border-brand-light/40 rounded-full pointer-events-none"></div>
-            <div className="absolute right-[6%] top-1/2 -translate-y-1/2 w-64 h-64 border-16 border-brand-light/25 rounded-full pointer-events-none"></div>
+            <div className="absolute right-[-15%] md:right-[-4%] top-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 rounded-full pointer-events-none border-[28px] border-brand-light/30"></div>
+            <div className="absolute right-[-2%] md:right-[8%] top-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 rounded-full pointer-events-none border-[16px] border-brand-light/20"></div>
 
             {/* Top row: headline + stats */}
             <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-8">
@@ -42,7 +42,7 @@ export default function Home() {
                 {[
                   { value: "400+", label: "Unit Terpasang", color: "#3483C2" },
                   { value: "12+", label: "Tahun Pengalaman", color: "#3483C2" },
-                  { value: "100%", label: "Produk Bergaransi", color: "#E93468" },
+                  { value: "100%", label: "Produk Bergaransi", color: "#C24B53" },
                   { value: "34 Prov", label: "Jangkauan Pengiriman", color: "#3483C2" },
                 ].map(({ value, label, color }) => (
                   <div key={label} className="bg-white rounded-2xl px-4 py-3 flex flex-col gap-0.5 border border-gray-100 shadow-sm">

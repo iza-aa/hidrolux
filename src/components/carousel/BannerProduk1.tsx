@@ -4,7 +4,7 @@ import { BadgeCheck, Zap, Shield } from "lucide-react"
 export function BannerProduk1() {
   return (
     <div
-      className="w-full h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center"
+      className="w-full min-h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center"
       style={{ backgroundColor: "#EFF7F9" }}
     >
       {/* Decorative circles */}
@@ -12,7 +12,7 @@ export function BannerProduk1() {
       <div className="absolute -left-6 -bottom-10 w-48 h-48 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }} />
 
       {/* Left: text content */}
-      <div className="relative z-10 flex-1 px-8 md:px-14 py-6">
+      <div className="relative z-10 flex-1 px-6 md:px-14 py-6">
         <div
           className="inline-block text-[10px] font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full"
           style={{ backgroundColor: "#3483C2", color: "white" }}

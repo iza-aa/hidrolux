@@ -2,14 +2,14 @@ import { Clock, HeadphonesIcon, CheckCircle2, MessageCircle } from "lucide-react
 
 export function BannerLayanan() {
   return (
-    <div className="w-full h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
+    <div className="w-full min-h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
       {/* Background decorative circles */}
       <div className="absolute right-[-40px] top-[-60px] w-64 h-64 rounded-full opacity-40" style={{ backgroundColor: "#AFD8DD" }}></div>
       <div className="absolute right-[15%] bottom-[-40px] w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>
-      <div className="absolute left-[40%] top-[-20px] w-20 h-20 rounded-full opacity-30" style={{ backgroundColor: "#F6D2E2" }}></div>
+      <div className="absolute left-[40%] top-[-20px] w-20 h-20 rounded-full opacity-30" style={{ backgroundColor: "#D8D7DC" }}></div>
 
       {/* Left content */}
-      <div className="relative z-10 px-8 md:px-14 py-6 flex-1">
+      <div className="relative z-10 px-6 md:px-14 py-6 flex-1">
         <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase" style={{ backgroundColor: "#3483C2", color: "white" }}>
           HIDRO WATER PURIFIER
         </div>
@@ -29,7 +29,7 @@ export function BannerLayanan() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#E93468" }}>
+            <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#C24B53" }}>
               <HeadphonesIcon className="w-4 h-4 text-white" />
             </div>
             <span className="text-xs font-semibold" style={{ color: "#0D2035" }}>
