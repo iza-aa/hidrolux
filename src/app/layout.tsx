@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "Hidro - One Stop Solution of Water Purifier",
   description: "Solusi terbaik mesin depot air minum. Mesin berstandar internasional, awet, dan lolos uji kelayakan DEPKES RI.",
   keywords: ["depot air minum", "mesin RO", "pabrik air minum", "water purifier", "hidro", "mesin AMDK", "peluang bisnis air"],
+  icons: {
+    icon: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
 };
 
 export default function RootLayout({

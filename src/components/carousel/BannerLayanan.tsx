@@ -4,9 +4,9 @@ export function BannerLayanan() {
   return (
     <div className="w-full min-h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
       {/* Background decorative circles */}
-      <div className="absolute right-[-40px] top-[-60px] w-64 h-64 rounded-full opacity-40" style={{ backgroundColor: "#AFD8DD" }}></div>
-      <div className="absolute right-[15%] bottom-[-40px] w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>
-      <div className="absolute left-[40%] top-[-20px] w-20 h-20 rounded-full opacity-30" style={{ backgroundColor: "#D8D7DC" }}></div>
+      <div className="absolute -right-10 -top-15 w-64 h-64 rounded-full opacity-40" style={{ backgroundColor: "#AFD8DD" }}></div>
+      <div className="absolute right-[15%] -bottom-10 w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>
+      <div className="absolute left-[40%] -top-5 w-20 h-20 rounded-full opacity-30" style={{ backgroundColor: "#D8D7DC" }}></div>
 
       {/* Left content */}
       <div className="relative z-10 px-6 md:px-14 py-6 flex-1">

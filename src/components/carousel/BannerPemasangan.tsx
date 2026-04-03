@@ -5,7 +5,7 @@ export function BannerPemasangan() {
   return (
     <div className="w-full min-h-44 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
       {/* Decorative */}
-      <div className="absolute right-[-20px] top-[-20px] w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>
+      <div className="absolute -right-5 -top-5 w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>
 
       {/* Left content */}
       <div className="relative z-10 px-6 md:px-14 py-4 md:py-6 flex-1 min-w-0">
