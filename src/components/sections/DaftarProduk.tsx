@@ -12,7 +12,7 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { ShoppingCart, Check, MessageCircle, Droplets, FlaskConical, Home, Filter, Factory, Package, Wrench, Headphones, Info } from "lucide-react"
+import { ShoppingCart, Check, MessageCircle, Droplets, FlaskConical, Home, Filter, Factory, Package, Wrench, Headphones, Info, X } from "lucide-react"
 
 type Product = {
   id: string
@@ -233,30 +233,32 @@ export function DaftarProduk() {
 
         {/* Floating Checkout */}
         {selectedProducts.length > 0 && (
-          <div className="fixed bottom-0 left-0 right-0 p-4 bg-brand-navy/95 backdrop-blur-md border-t border-brand-blue/30 z-50 animate-in slide-in-from-bottom-10">
-            <div className="container mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="bg-brand-blue/30 p-3 rounded-full relative">
-                  <ShoppingCart className="text-brand-light h-6 w-6" />
-                  <span className="absolute -top-1 -right-1 bg-brand-pink text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-brand-navy">
+          <div className="fixed bottom-0 left-0 right-0 px-4 py-3 bg-brand-navy/95 backdrop-blur-md border-t border-brand-blue/30 z-50 animate-in slide-in-from-bottom-10">
+            <div className="container mx-auto max-w-7xl flex items-center gap-3">
+              <div className="flex items-center gap-3 shrink-0">
+                <div className="bg-brand-blue/30 p-2.5 rounded-full relative">
+                  <ShoppingCart className="text-brand-light h-5 w-5" />
+                  <span className="absolute -top-1 -right-1 bg-brand-pink text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-brand-navy">
                     {selectedProducts.length}
                   </span>
                 </div>
-                <div>
-                  <p className="font-bold text-white">
-                    {selectedProducts.length} Mesin/Paket Dipilih
-                  </p>
-                  <p className="text-xs text-brand-light hidden sm:block">
-                    Siap untuk dikonsultasikan via WhatsApp
-                  </p>
-                </div>
+                <p className="font-bold text-white text-sm whitespace-nowrap">
+                  {selectedProducts.length} Dipilih
+                </p>
+                <button
+                  onClick={() => setSelectedProducts([])}
+                  className="text-white/40 hover:text-white transition-colors p-1"
+                  title="Hapus semua"
+                >
+                  <X className="w-4 h-4" />
+                </button>
               </div>
               
               <Button 
                 onClick={handleWhatsAppCheckout} 
-                className="w-full sm:w-auto bg-brand-pink hover:bg-brand-pink/90 text-white font-bold py-6 px-8 rounded-full transition-all flex items-center gap-2"
+                className="flex-1 md:flex-none md:ml-auto bg-brand-pink hover:bg-brand-pink/90 text-white font-bold py-5 px-8 rounded-full transition-all flex items-center justify-center gap-2 text-sm"
               >
-                <MessageCircle className="h-5 w-5" />
+                <MessageCircle className="h-4 w-4 shrink-0" />
                 Lanjutkan ke WhatsApp
               </Button>
             </div>
