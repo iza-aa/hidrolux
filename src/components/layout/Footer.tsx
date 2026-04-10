@@ -105,19 +105,20 @@ export function Footer() {
           
         </div>
 
-        <div className="border-t border-brand-blue/20 pt-8 text-center text-xs font-bold tracking-wider text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4 uppercase">
+      </div>
+
+        <div className="border-t border-brand-blue/20 pt-8 text-center text-xs font-bold tracking-wider text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4 uppercase p ,x-30 px-4">
           <p>&copy; {new Date().getFullYear()} HIDRO WATER TREATMENT SYSTEM.</p>
           <div className="flex gap-6">
             <button onClick={() => setModal("privacy")} className="hover:text-brand-light transition-colors">PRIVACY POLICY</button>
           </div>
         </div>
-      </div>
     </footer>
 
     {/* Privacy Policy Bottom Sheet */}
     {modal === "privacy" && (
-      <div className="fixed inset-0 z-60 flex flex-col justify-start" onClick={() => setModal(null)}>
-        <div className={`absolute inset-0 ${showConsent ? "bg-transparent" : "bg-black/30"}`} />
+      <div className="fixed inset-0 z-50 flex flex-col justify-start" onClick={() => setModal(null)}>
+        <div className="absolute inset-0 bg-black/30" />
         <div
           className="relative bg-white w-full animate-in slide-in-from-top-4 duration-300"
           onClick={(e) => e.stopPropagation()}

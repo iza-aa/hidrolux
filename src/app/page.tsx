@@ -1,7 +1,7 @@
 import { PeluangBisnis } from "@/components/sections/PeluangBisnis"
 import { AnalisaKeuntungan } from "@/components/sections/AnalisaKeuntungan"
 import { KenapaHidrolux } from "@/components/sections/KenapaHidrolux"
-import { DaftarProduk } from "@/components/sections/DaftarProduk"
+import { KatalogSegmen } from "@/components/sections/KatalogSegmen"
 import { FaqSection } from "@/components/sections/FaqSection"
 import { HeroCarousel } from "@/components/carousel/HeroCarousel"
 
@@ -68,7 +68,7 @@ export default function Home() {
       </div>
 
       <div id="produk">
-        <DaftarProduk />
+        <KatalogSegmen />
       </div>
 
       <FaqSection />
