@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, startTransition } from "react"
-import { MapPin, Phone, MessageCircle, X } from "lucide-react"
+import { MapPin, Phone, MessageCircle, Mail, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -73,10 +73,18 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-4 hover:text-white transition-colors cursor-pointer group">
+                <a href="mailto:hidrocipta@gmail.com" className="flex items-center gap-4 w-full">
+                  <div className="bg-brand-blue/20 p-2 rounded-lg group-hover:bg-brand-blue transition-colors">
+                    <Mail className="w-4 h-4 text-brand-light" />
+                  </div>
+                  <span>hidrocipta@gmail.com</span>
+                </a>
+              </li>
+              <li className="flex items-center gap-4 hover:text-white transition-colors cursor-pointer group">
                 <div className="bg-brand-blue/20 p-2 rounded-lg group-hover:bg-brand-blue transition-colors">
                   <MapPin className="w-4 h-4 text-brand-light shrink-0" />
                 </div>
-                <span className="leading-relaxed">Jl. Raya Kudus - Jepara No.KM 5, Kedungdowo, Mijen, Kec. Kaliwungu, Kabupaten Kudus, Jawa Tengah 59332</span>
+                <span className="leading-relaxed">JL.Kudus - Jepara No.5 Mijen, Kaliwungu, Kudus, Jawa Tengah</span>
               </li>
             </ul>
           </div>
@@ -108,7 +116,7 @@ export function Footer() {
       </div>
 
         <div className="border-t border-brand-blue/20 pt-8 text-center text-xs font-bold tracking-wider text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4 uppercase p ,x-30 px-4">
-          <p>&copy; {new Date().getFullYear()} HIDRO WATER TREATMENT SYSTEM.</p>
+          <p>&copy; {new Date().getFullYear()} HIDRO CIPTA PERKASA.</p>
           <div className="flex gap-6">
             <button onClick={() => setModal("privacy")} className="hover:text-brand-light transition-colors">PRIVACY POLICY</button>
           </div>

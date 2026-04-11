@@ -142,9 +142,9 @@ function KelebihanContent() {
       <p className="text-slate-500 text-sm leading-relaxed mb-8 max-w-2xl">
         {kelebihanData.intro}
       </p>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-4">
         {/* Kelebihan */}
-        <div className="rounded-2xl bg-[#F0FBF6] border border-green-100 p-6">
+        <div className="rounded-2xl bg-white border border-green-100 p-5">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-7 h-7 rounded-full bg-[#2a9d6a] flex items-center justify-center shrink-0">
               <CheckCircle className="w-4 h-4 text-white" />
@@ -166,7 +166,7 @@ function KelebihanContent() {
         </div>
 
         {/* Kekurangan */}
-        <div className="rounded-2xl bg-[#FDF2F3] border border-red-100 p-6">
+        <div className="rounded-2xl bg-white border border-red-100 p-5">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-7 h-7 rounded-full bg-brand-pink flex items-center justify-center shrink-0">
               <XCircle className="w-4 h-4 text-white" />
@@ -267,7 +267,7 @@ export function PanduanUsaha() {
         </div>
 
         {/* ── Top Tabs ── */}
-        <div className="flex justify-center gap-3 overflow-x-auto pb-1 mb-4">
+        <div className="grid grid-cols-3 gap-2 md:gap-3 mb-6">
           {tabs.map((tab) => {
             const Icon = tab.icon
             const isActive = active === tab.id
@@ -275,7 +275,7 @@ export function PanduanUsaha() {
               <button
                 key={tab.id}
                 onClick={() => setActive(tab.id)}
-                className={`group flex items-center gap-3 rounded-2xl px-5 py-3 text-left transition-all duration-200 border flex-1 basis-0 min-w-44 max-w-64 ${
+                className={`group flex flex-col sm:flex-row items-center sm:items-center gap-2 rounded-2xl px-3 sm:px-5 py-3 sm:py-3 text-center sm:text-left transition-all duration-200 border w-full ${
                   isActive
                     ? "shadow-md border-transparent"
                     : "bg-white border-gray-100 hover:shadow-sm hover:border-gray-200"
@@ -297,12 +297,12 @@ export function PanduanUsaha() {
                 </div>
                 <div className="min-w-0">
                   <div
-                    className="font-bold text-sm leading-tight whitespace-nowrap"
+                    className="font-bold text-xs sm:text-sm leading-tight"
                     style={{ color: isActive ? tab.accentColor : "#1e293b" }}
                   >
                     {tab.label}
                   </div>
-                  <div className="text-[11px] text-slate-400 whitespace-nowrap">{tab.sublabel}</div>
+                  <div className="hidden sm:block text-[11px] text-slate-400">{tab.sublabel}</div>
                 </div>
               </button>
             )
@@ -335,7 +335,7 @@ export function PanduanUsaha() {
               <p className="text-xs text-slate-400">{activeTab.sublabel}</p>
             </div>
             <span
-              className="ml-auto text-[11px] font-bold px-3 py-1 rounded-full"
+              className="ml-auto text-[11px] font-bold px-3 py-1 rounded-full shrink-0 whitespace-nowrap"
               style={{
                 backgroundColor: `${activeTab.accentColor}15`,
                 color: activeTab.accentColor,
