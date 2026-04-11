@@ -46,7 +46,7 @@ export function BannerProduk1() {
       {/* Right: product image */}
       <div className="relative z-10 hidden md:flex items-end justify-center h-full pr-8 pt-4">
         <Image
-          src="/hidro5.jpeg"
+          src="/images/depot web.png"
           alt="Hidro Zero Depot"
           width={220}
           height={260}
