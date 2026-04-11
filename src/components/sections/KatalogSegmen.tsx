@@ -1,14 +1,5 @@
 import Image from "next/image"
-import { MessageCircle, ChevronRight } from "lucide-react"
-
-const WA_NUMBER = "628985919009"
-
-function waLink(segmen: string) {
-  const msg = encodeURIComponent(
-    `Halo Hidro, saya tertarik dengan produk segmen *${segmen}*. Bisa info lebih lanjut?`
-  )
-  return `https://wa.me/${WA_NUMBER}?text=${msg}`
-}
+import { VideoPlayButton } from "@/components/ui/VideoPlayButton"
 
 // ─── Tipe ────────────────────────────────────────────────────────────────────
 type ProductCard = {
@@ -28,7 +19,7 @@ const segmenDepot = {
     "Paket depot all-in-one dengan teknologi UV Stainless 304, lolos uji DEPKES RI. Cocok untuk Anda yang ingin memulai usaha depot air dari nol maupun upgrade unit lama. Tim kami merakit, menginstalasi, dan melatih langsung di lokasi Anda.",
   heroImage: {
     src: "/images/depot web.png",
-    alt: "Depot Air Minum Hidro Zero",
+    alt: "Depot Air Minum Hidro",
   },
   pills: ["Paket Lengkap", "Lolos DEPKES RI", "Garansi Resmi", "Siap Operasi"],
   waSegmen: "Depot Air Minum",
@@ -108,38 +99,7 @@ const segmenIceAmdk: ProductCard[] = [
 
 // ─── Sub-komponen ─────────────────────────────────────────────────────────────
 
-function SectionLabel({
-  label,
-  accent,
-}: {
-  label: string
-  accent: string
-}) {
-  return (
-    <span
-      className="inline-block text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3"
-      style={{ backgroundColor: accent + "1A", color: accent, border: `1px solid ${accent}40` }}
-    >
-      {label}
-    </span>
-  )
-}
 
-function WaButton({ href, label }: { href: string; label: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
-      style={{ backgroundColor: "#3483C2", color: "#fff" }}
-    >
-      <MessageCircle className="w-4 h-4" />
-      {label}
-      <ChevronRight className="w-3.5 h-3.5" />
-    </a>
-  )
-}
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
@@ -185,7 +145,6 @@ export function KatalogSegmen() {
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 p-8 md:p-12">
             {/* Text */}
             <div className="flex-1 min-w-0">
-              <SectionLabel label={segmenDepot.label} accent={segmenDepot.accent} />
               <h3
                 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2"
                 style={{ color: "#0D2035" }}
@@ -218,10 +177,6 @@ export function KatalogSegmen() {
                 ))}
               </div>
 
-              <WaButton
-                href={waLink(segmenDepot.waSegmen)}
-                label="Konsultasi Depot"
-              />
             </div>
 
             {/* Hero image */}
@@ -245,7 +200,6 @@ export function KatalogSegmen() {
           {/* Header row */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
             <div>
-              <SectionLabel label="SEGMEN 2" accent="#1a5fa0" />
               <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
                 Mesin RO &amp;{" "}
                 <span className="text-brand-blue">Water Treatment Plant</span>
@@ -255,12 +209,7 @@ export function KatalogSegmen() {
                 solusi lengkap filtrasi dan pengolahan air bersih yang terukur dan terpercaya.
               </p>
             </div>
-            <div className="shrink-0">
-              <WaButton
-                href={waLink("RO & Water Treatment Plant")}
-                label="Konsultasi RO & WTP"
-              />
-            </div>
+            <VideoPlayButton />
           </div>
 
           {/* Grid */}
@@ -290,28 +239,6 @@ export function KatalogSegmen() {
               </div>
             ))}
 
-            {/* Spacer / CTA card */}
-            <div
-              className="rounded-2xl flex flex-col items-center justify-center p-6 text-center gap-3 border"
-              style={{
-                background: "linear-gradient(135deg, #0D2035 0%, #1a3a5c 100%)",
-                borderColor: "#3483C240",
-              }}
-            >
-              <p className="text-white text-sm font-semibold leading-snug">
-                Butuh kapasitas khusus atau konfigurasi custom?
-              </p>
-              <a
-                href={waLink("RO & WTP custom")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-bold px-4 py-2 rounded-full flex items-center gap-1.5 transition hover:opacity-90"
-                style={{ backgroundColor: "#3483C2", color: "#fff" }}
-              >
-                <MessageCircle className="w-3.5 h-3.5" />
-                Tanya Sekarang
-              </a>
-            </div>
           </div>
         </div>
 
@@ -330,7 +257,6 @@ export function KatalogSegmen() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
           <div>
-            <SectionLabel label="SEGMEN 3" accent="#AFD8DD" />
             <h3 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
               Mesin Ice &amp;{" "}
               <span style={{ color: "#AFD8DD" }}>Pabrik AMDK</span>
@@ -340,12 +266,7 @@ export function KatalogSegmen() {
               dengan mesin otomatis berkapasitas komersial hingga industri.
             </p>
           </div>
-          <div className="shrink-0">
-            <WaButton
-              href={waLink("Mesin Ice & AMDK")}
-              label="Konsultasi Ice & AMDK"
-            />
-          </div>
+
         </div>
 
         {/* Grid */}

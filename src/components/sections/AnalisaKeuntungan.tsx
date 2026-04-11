@@ -16,10 +16,10 @@ export function AnalisaKeuntungan() {
   return (
     <section className="pt-8 pb-10 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
 
           {/* Banner 1: Simulasi Keuntungan */}
-          <div className={`bg-brand-light-bg rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-90 transition-all border ${activeCard === "perhitungan" ? "border-brand-blue" : "border-brand-light"}`}>
+          <div className={`order-1 bg-brand-light-bg rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-90 transition-all border ${activeCard === "perhitungan" ? "border-brand-blue" : "border-brand-light"}`}>
             <div className="relative z-10">
               <div className="text-brand-blue font-bold text-xs tracking-widest uppercase mb-3">PELUANG USAHA</div>
               <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight leading-tight">
@@ -40,7 +40,7 @@ export function AnalisaKeuntungan() {
           </div>
 
           {/* Banner 2: Edukasi UV */}
-          <div className={`rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-90 transition-all border ${activeCard === "perbandingan" ? "border-brand-blue" : "border-brand-navy-mid"}`} style={{ background: "linear-gradient(135deg, #0D2035 0%, #1a3a5c 60%, #3483C2 100%)" }}>
+          <div className={`order-3 md:order-2 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-90 transition-all border ${activeCard === "perbandingan" ? "border-brand-blue" : "border-brand-navy-mid"}`} style={{ background: "linear-gradient(135deg, #0D2035 0%, #1a3a5c 60%, #3483C2 100%)" }}>
             <div className="absolute top-0 right-0 p-8">
               <div className="bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12">
                 PENTING!
@@ -64,11 +64,10 @@ export function AnalisaKeuntungan() {
             </div>
             <div className="absolute left-[-10%] bottom-[-10%] w-64 h-64 bg-brand-light/10 rounded-full"></div>
           </div>
-        </div>
 
-        {/* Detail Card */}
-        {activeCard && (
-          <div className="mt-6 bg-white rounded-3xl border border-brand-light p-8 md:p-10 animate-in fade-in slide-in-from-top-4 duration-300">
+          {/* Detail Card */}
+          {activeCard && (
+            <div className={`col-span-full md:order-3 ${activeCard === "perhitungan" ? "order-2" : "order-4"} bg-white rounded-3xl border border-brand-light p-8 md:p-10 animate-in fade-in slide-in-from-top-4 duration-300`}>
 
             {/* PERHITUNGAN */}
             {activeCard === "perhitungan" && (
@@ -85,65 +84,85 @@ export function AnalisaKeuntungan() {
                   </button>
                 </div>
 
-                <div className="flex items-center justify-between bg-brand-light-bg border border-brand-light rounded-2xl px-6 py-4 mb-6">
-                  <div>
-                    <p className="text-xs font-bold text-brand-blue uppercase tracking-wider mb-1">Air Baku — 1 Tangki</p>
-                    <p className="text-slate-500 text-sm">8.000 Lt / 400 Galon</p>
-                  </div>
-                  <p className="font-extrabold text-brand-blue text-base md:text-xl shrink-0">Rp 600.000</p>
-                </div>
-
-                <div className="border border-gray-200 rounded-2xl overflow-hidden mb-6">
+                {/* Modal Awal */}
+                <div className="border border-gray-200 rounded-2xl overflow-hidden mb-5">
                   <div className="bg-slate-50 px-6 py-3 border-b border-gray-200">
-                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Biaya per Galon</p>
+                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">1. Estimasi Modal Awal</p>
                   </div>
                   <div className="divide-y divide-gray-100">
-                    <div className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
-                      <span className="leading-tight">Air Baku (Rp 600.000 / 400)</span>
-                      <span className="font-semibold shrink-0">Rp 1.500</span>
-                    </div>
-                    <div className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
-                      <span>Tutup Galon + Tissue</span>
-                      <span className="font-semibold shrink-0">+/- Rp 200</span>
-                    </div>
-                    <div className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
-                      <span>Listrik</span>
-                      <span className="font-semibold shrink-0">+/- Rp 50</span>
-                    </div>
+                    {[
+                      ["Paket Mesin Air Isi Ulang", "Rp 25.000.000"],
+                      ["Galon Kosong 20 pcs (@Rp 35.000)", "Rp 700.000"],
+                      ["Keranjang Galon", "Rp 500.000"],
+                      ["Tutup Galon + Tisu", "Rp 100.000"],
+                      ["Meja & Kursi Kasir", "Rp 550.000"],
+                    ].map(([label, val]) => (
+                      <div key={label} className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
+                        <span className="leading-tight">{label}</span>
+                        <span className="font-semibold shrink-0">{val}</span>
+                      </div>
+                    ))}
                     <div className="flex justify-between items-center px-4 md:px-6 py-4 bg-brand-light-bg gap-4">
-                      <span className="font-bold text-slate-900">Total Modal / Galon</span>
-                      <span className="font-extrabold text-brand-pink text-base md:text-lg shrink-0">Rp 1.750</span>
+                      <span className="font-bold text-slate-900">Total Modal Awal</span>
+                      <span className="font-extrabold text-brand-pink text-base md:text-lg shrink-0">Rp 26.850.000</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-brand-blue rounded-2xl px-6 py-5 mb-6">
+                {/* Biaya Operasional */}
+                <div className="border border-gray-200 rounded-2xl overflow-hidden mb-5">
+                  <div className="bg-slate-50 px-6 py-3 border-b border-gray-200">
+                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">2. Biaya Operasional Bulanan</p>
+                  </div>
+                  <div className="divide-y divide-gray-100">
+                    {[
+                      ["Pembelian Air per Bulan", "Rp 1.500.000"],
+                      ["Penggantian Filter", "Rp 150.000"],
+                      ["Listrik per Bulan", "Rp 200.000"],
+                      ["Kebutuhan Tidak Terduga", "Rp 400.000"],
+                    ].map(([label, val]) => (
+                      <div key={label} className="flex justify-between items-center px-4 md:px-6 py-3 text-sm text-slate-600 gap-4">
+                        <span className="leading-tight">{label}</span>
+                        <span className="font-semibold shrink-0">{val}</span>
+                      </div>
+                    ))}
+                    <div className="flex justify-between items-center px-4 md:px-6 py-4 bg-brand-light-bg gap-4">
+                      <span className="font-bold text-slate-900">Total Biaya Bulanan</span>
+                      <span className="font-extrabold text-brand-pink text-base md:text-lg shrink-0">Rp 2.250.000</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Proyeksi Pendapatan */}
+                <div className="bg-brand-blue rounded-2xl px-6 py-5 mb-5">
+                  <p className="text-brand-light/70 text-xs font-bold uppercase tracking-wider mb-3">3. Proyeksi Pendapatan @ 80 Galon / Hari</p>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
-                      <p className="text-brand-light/70 text-xs font-bold uppercase tracking-wider mb-1">Harga Jual Pasar</p>
-                      <p className="text-white font-bold text-lg">Rp 4.000 - Rp 5.000 / Galon</p>
+                      <p className="text-brand-light/70 text-xs font-semibold mb-0.5">Harga Jual</p>
+                      <p className="text-white font-bold text-lg">Rp 5.000 / Galon</p>
                     </div>
                     <div className="sm:text-right">
-                      <p className="text-brand-light/70 text-xs font-bold uppercase tracking-wider mb-1">Keuntungan Bersih</p>
-                      <p className="text-brand-light font-extrabold text-xl">Rp 2.250 - Rp 3.250</p>
+                      <p className="text-brand-light/70 text-xs font-semibold mb-0.5">Pendapatan per Bulan</p>
+                      <p className="text-brand-light font-extrabold text-xl">Rp 12.000.000</p>
                     </div>
                   </div>
                 </div>
 
+                {/* Laba Bersih */}
                 <div>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Proyeksi @ 50 Galon / Hari</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">4. Laba Bersih per Bulan</p>
                   <div className="grid grid-cols-3 gap-2 md:gap-3 text-center">
                     <div className="bg-brand-light-bg border border-brand-light rounded-2xl py-3 md:py-4 px-1 md:px-2">
-                      <p className="text-[9px] md:text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-1 md:mb-2">Sehari</p>
-                      <p className="font-extrabold text-brand-blue text-sm md:text-lg">Rp 162.500</p>
+                      <p className="text-[9px] md:text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-1 md:mb-2">Per Hari</p>
+                      <p className="font-extrabold text-brand-blue text-sm md:text-lg">Rp 400.000</p>
                     </div>
                     <div className="bg-brand-light-bg border border-brand-light rounded-2xl py-3 md:py-4 px-1 md:px-2">
-                      <p className="text-[9px] md:text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-1 md:mb-2">Seminggu</p>
-                      <p className="font-extrabold text-brand-blue text-sm md:text-lg">Rp 1,1 Jt</p>
+                      <p className="text-[9px] md:text-[10px] font-bold text-brand-blue uppercase tracking-wider mb-1 md:mb-2">Operasional</p>
+                      <p className="font-extrabold text-brand-blue text-sm md:text-lg">Rp 2,25 Jt</p>
                     </div>
                     <div className="bg-brand-pink rounded-2xl py-3 md:py-4 px-1 md:px-2">
-                      <p className="text-[9px] md:text-[10px] font-bold text-white/80 uppercase tracking-wider mb-1 md:mb-2">Sebulan</p>
-                      <p className="font-extrabold text-white text-sm md:text-lg">Rp 4,8 Jt</p>
+                      <p className="text-[9px] md:text-[10px] font-bold text-white/80 uppercase tracking-wider mb-1 md:mb-2">Laba Bersih</p>
+                      <p className="font-extrabold text-white text-sm md:text-lg">Rp 9,75 Jt</p>
                     </div>
                   </div>
                 </div>
@@ -196,8 +215,9 @@ export function AnalisaKeuntungan() {
                 </div>
               </>
             )}
-          </div>
-        )}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   )

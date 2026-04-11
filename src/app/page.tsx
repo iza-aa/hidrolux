@@ -4,6 +4,7 @@ import { KenapaHidrolux } from "@/components/sections/KenapaHidrolux"
 import { KatalogSegmen } from "@/components/sections/KatalogSegmen"
 import { FaqSection } from "@/components/sections/FaqSection"
 import { HeroCarousel } from "@/components/carousel/HeroCarousel"
+import { PanduanUsaha } from "@/components/sections/PanduanUsaha"
 
 export default function Home() {
   return (
@@ -70,6 +71,8 @@ export default function Home() {
       <div id="produk">
         <KatalogSegmen />
       </div>
+
+      <PanduanUsaha />
 
       <FaqSection />
     </main>
