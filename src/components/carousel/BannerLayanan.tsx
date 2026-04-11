@@ -2,7 +2,7 @@ import { Clock, HeadphonesIcon, CheckCircle2, MessageCircle } from "lucide-react
 
 export function BannerLayanan() {
   return (
-    <div className="w-full min-h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
+    <div className="w-full min-h-52 md:h-64 rounded-[32px] overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
       {/* Background decorative circles */}
       <div className="absolute -right-10 -top-15 w-64 h-64 rounded-full opacity-40" style={{ backgroundColor: "#AFD8DD" }}></div>
       <div className="absolute right-[15%] -bottom-10 w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>

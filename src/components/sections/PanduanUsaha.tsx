@@ -315,7 +315,7 @@ export function PanduanUsaha() {
           className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8 animate-in fade-in-0 slide-in-from-bottom-4 duration-300"
         >
           {/* Content header */}
-          <div className="flex items-center gap-3 mb-6 pb-5 border-b border-gray-100">
+          <div className="flex items-center gap-3 mb-6">
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
               style={{ backgroundColor: activeTab.accentBg }}

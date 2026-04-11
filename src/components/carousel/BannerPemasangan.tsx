@@ -3,7 +3,7 @@ import { MapPin, Truck, Wrench } from "lucide-react"
 
 export function BannerPemasangan() {
   return (
-    <div className="w-full min-h-44 md:h-64 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
+    <div className="w-full min-h-44 md:h-64 rounded-[32px] overflow-hidden relative flex items-center" style={{ backgroundColor: "#EFF7F9" }}>
       {/* Decorative */}
       <div className="absolute -right-5 -top-5 w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: "#3483C2" }}></div>
 

@@ -4,7 +4,7 @@ import { BadgeCheck, Zap, Shield } from "lucide-react"
 export function BannerProduk1() {
   return (
     <div
-      className="w-full min-h-52 md:h-64 rounded-3xl overflow-hidden relative flex items-center"
+      className="w-full min-h-52 md:h-64 rounded-[32px] overflow-hidden relative flex items-center"
       style={{ backgroundColor: "#EFF7F9" }}
     >
       {/* Decorative circles */}

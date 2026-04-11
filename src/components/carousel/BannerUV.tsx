@@ -2,7 +2,7 @@ import { XCircle, CheckCircle2, AlertTriangle } from "lucide-react"
 
 export function BannerUV() {
   return (
-    <div className="w-full h-55 md:h-70 rounded-3xl overflow-hidden relative flex items-center" style={{ backgroundColor: "#0D2035" }}>
+    <div className="w-full h-55 md:h-70 rounded-[32px] overflow-hidden relative flex items-center" style={{ backgroundColor: "#0D2035" }}>
       {/* Decorative */}
       <div className="absolute -left-7.5 -bottom-7.5 w-48 h-48 rounded-full opacity-10" style={{ backgroundColor: "#AFD8DD" }}></div>
       <div className="absolute right-[30%] -top-5 w-32 h-32 rounded-full opacity-10" style={{ backgroundColor: "#D8D7DC" }}></div>

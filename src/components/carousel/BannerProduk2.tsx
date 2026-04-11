@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 export function BannerProduk2() {
   return (
     <div
-      className="w-full min-h-66 md:h-64 rounded-3xl overflow-hidden relative flex flex-col md:flex-row md:items-center"
+      className="w-full min-h-66 md:h-64 rounded-[32px] overflow-hidden relative flex flex-col md:flex-row md:items-center"
       style={{ background: "linear-gradient(135deg, #0D2035 0%, #1a3a5c 60%, #3483C2 100%)" }}
     >
       {/* Decorative */}
