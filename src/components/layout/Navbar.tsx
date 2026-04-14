@@ -45,11 +45,21 @@ export function Navbar() {
           <span className="text-[8px] font-bold text-slate-900 tracking-widest uppercase">WATER TREATMENT SYSTEM</span>
         </Link>
 
+        {/* UPDATE: 
+          1. Menggunakan <Link> bawaan Next.js
+          2. Menambahkan "/" sebelum "#" agar bisa kembali ke Home dari halaman lain
+          3. Menambahkan menu "Artikel Bisnis" untuk halaman SEO
+        */}
         <nav className="hidden md:flex items-center gap-8 font-bold text-[14px] text-slate-600">
-          <a href="#peluang" className="hover:text-brand-blue transition-colors">Peluang Bisnis</a>
-          <a href="#kenapa-kami" className="hover:text-brand-blue transition-colors">Keunggulan</a>
-          <a href="#produk" className="hover:text-brand-blue transition-colors">Produk</a>
-          <a href="#faq" className="hover:text-brand-blue transition-colors">FAQ</a>
+          <Link href="/#peluang" className="hover:text-brand-blue transition-colors">Peluang Bisnis</Link>
+          <Link href="/#kenapa-kami" className="hover:text-brand-blue transition-colors">Keunggulan</Link>
+          <Link href="/#produk" className="hover:text-brand-blue transition-colors">Produk</Link>
+          <Link href="/#faq" className="hover:text-brand-blue transition-colors">FAQ</Link>
+          
+          {/* Menu baru untuk halaman SEO kita */}
+          <Link href="/peluang-usaha" className="hover:text-brand-blue transition-colors">
+            Artikel Bisnis
+          </Link>
         </nav>
 
         <div className="relative" ref={dropdownRef}>

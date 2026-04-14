@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-// Mengganti font bawaan (Geist) menjadi Plus Jakarta Sans yang sangat elegan, geometris, dan profesional
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -12,20 +11,18 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Hidro Water Treatment System | Mesin Depot Air Minum Terpercaya",
-  description: "Hidro menyediakan mesin depot air minum isi ulang, mesin RO, AMDK, dan WTP berstandar internasional. Lolos uji DEPKES RI, garansi resmi, instalasi seluruh Indonesia.",
+  description: "Hidro menyediakan mesin depot air minum isi ulang, RO, AMDK, dan WTP berstandar internasional. Peluang usaha bisnis air minum modal kecil profit besar.",
   keywords: [
-    "mesin depot air minum",
-    "depot air minum isi ulang",
-    "mesin RO reverse osmosis",
-    "mesin AMDK",
-    "water treatment plant",
-    "mesin water purifier",
-    "hidro water treatment",
-    "peluang bisnis depot air",
-    "jual mesin depot air",
-    "harga mesin depot air minum",
-    "mesin WTP",
-    "mesin hexagonal water",
+    // Keywords Utama & Lama
+    "mesin depot air minum", "depot air minum isi ulang", "mesin RO reverse osmosis", 
+    "mesin AMDK", "water treatment plant", "mesin water purifier", "hidro water treatment", 
+    "jual mesin depot air", "harga mesin depot air minum", "mesin WTP", "mesin hexagonal water",
+    // Keywords Baru dari Tim Anda
+    "peluang usaha", "bisnis air minum", "profit besar", "modal kecil", "untung besar", 
+    "tidak musiman", "pelayanan memuaskan", "seluruh indonesia", "depot isi ulang", "isul", 
+    "reverse osmosis", "RO", "water treatment plan", "WTP", "air minum dalam kemasan", "AMDK", 
+    "ice cube", "ice tube", "mineral", "alkali", "heksagonal", "pembunuh bakteri", "higienis", 
+    "kesehatan", "kebutuhan dasar", "bahan baku gratis", "profesional", "memuaskan", "terjangkau"
   ],
   authors: [{ name: "Hidro Water Treatment System" }],
   creator: "Hidro Water Treatment System",
@@ -36,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Hidro Water Treatment System | Mesin Depot Air Minum Terpercaya",
-    description: "Solusi lengkap mesin depot air minum, RO, AMDK, dan WTP berstandar internasional. Garansi resmi, instalasi seluruh Indonesia. Konsultasi gratis!",
+    description: "Peluang usaha bisnis air minum dengan profit besar. Solusi mesin depot air minum, RO, AMDK, dan WTP berstandar internasional.",
     url: "https://hidro.co.id",
     siteName: "Hidro Water Treatment System",
     images: [
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hidro Water Treatment System | Mesin Depot Air Minum Terpercaya",
-    description: "Solusi lengkap mesin depot air minum, RO, AMDK, dan WTP berstandar internasional. Garansi resmi, instalasi seluruh Indonesia.",
+    description: "Peluang usaha bisnis air minum modal kecil untung besar. Solusi mesin depot air minum, RO, AMDK, dan WTP berstandar internasional.",
     images: ["/logo.jpeg"],
   },
   robots: {
