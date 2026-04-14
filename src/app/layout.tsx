@@ -82,17 +82,17 @@ export default function RootLayout({
               name: "Hidro Water Treatment System",
               description: "Produsen dan distributor mesin depot air minum, RO, AMDK, dan WTP berstandar internasional. Melayani seluruh Indonesia.",
               url: "https://hidro.co.id",
-              telephone: "+628985919009",
+              telephone: "+6282234547707",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+628985919009",
+                telephone: "+6282234547707",
                 contactType: "customer service",
                 areaServed: "ID",
                 availableLanguage: "Indonesian",
               },
               image: "https://hidro.co.id/logo.jpeg",
               logo: "https://hidro.co.id/logo.jpeg",
-              sameAs: ["https://wa.me/628985919009"],
+              sameAs: ["https://wa.me/6282234547707"],
             }),
           }}
         />

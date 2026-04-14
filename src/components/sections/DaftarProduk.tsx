@@ -112,7 +112,7 @@ export function DaftarProduk() {
 
   const handleWhatsAppCheckout = () => {
     if (selectedProducts.length === 0) return
-    const waNumber = "628985919009"
+    const waNumber = "6282234547707"
     let message = "Halo Hidro, saya tertarik dan ingin konsultasi lebih lanjut terkait produk/paket berikut:\n\n"
     selectedProducts.forEach((p, index) => {
       message += `${index + 1}. ${p.name} - ${p.category}\n`

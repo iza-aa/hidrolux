@@ -62,10 +62,10 @@ export function Footer() {
                 <div className="bg-brand-blue/20 p-2 rounded-lg group-hover:bg-brand-blue transition-colors">
                   <Phone className="w-4 h-4 text-brand-light" />
                 </div>
-                <span>+62 898-5919-009</span>
+                <span>+62 822-3454-7707</span>
               </li>
               <li className="flex items-center gap-4 hover:text-white transition-colors cursor-pointer group">
-                <a href="https://wa.me/628985919009" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 w-full">
+                <a href="https://wa.me/6282234547707" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 w-full">
                   <div className="bg-[#25D366]/20 p-2 rounded-lg group-hover:bg-[#25D366] transition-colors">
                     <MessageCircle className="w-4 h-4 text-[#25D366]" />
                   </div>
@@ -149,7 +149,7 @@ export function Footer() {
               </div>
               <div>
                 <p className="font-semibold text-slate-700 mb-1">Hak Anda</p>
-                <p>Anda berhak meminta penghapusan data kapan saja. Hubungi kami via WhatsApp +62 898-5919-009.</p>
+                <p>Anda berhak meminta penghapusan data kapan saja. Hubungi kami via WhatsApp +62 822-3454-7707.</p>
               </div>
             </div>
             <p className="text-[10px] text-slate-400 mt-3">Terakhir diperbarui: April 2026 &middot; Hidro Water Treatment System</p>

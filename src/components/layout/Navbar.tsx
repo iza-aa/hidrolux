@@ -74,7 +74,7 @@ export function Navbar() {
           {dropdownOpen && (
             <div className="absolute right-0 mt-2 w-52 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
               <a
-                href="https://wa.me/628985919009"
+                href="https://wa.me/6282234547707"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setDropdownOpen(false)}
@@ -85,7 +85,7 @@ export function Navbar() {
               </a>
               <div className="h-px bg-gray-100" />
               <a
-                href="tel:+628985919009"
+                href="tel:+6282234547707"
                 onClick={() => setDropdownOpen(false)}
                 className="flex items-center gap-3 px-5 py-3.5 hover:bg-blue-50 transition-colors text-sm font-semibold text-slate-700 hover:text-brand-blue"
               >

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PeluangUsahaPage() {
   return (
-    <main className="bg-slate-50 min-h-screen pt-28 pb-16 md:py-16">
+    <main className="min-h-screen pt-8 pb-16 md:py-8">
       <div className="container mx-auto px-4 max-w-4xl">
         
         {/* Tombol Kembali ke Home */}
@@ -70,7 +70,7 @@ export default function PeluangUsahaPage() {
               Konsultasikan kebutuhan mesin Anda dengan tim ahli kami secara gratis.
             </p>
             <a 
-              href="https://wa.me/628985919009" 
+              href="https://wa.me/6282234547707" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white font-bold py-3 px-8 rounded-full transition-colors w-full md:w-auto"
