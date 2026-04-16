@@ -37,7 +37,7 @@ export function Footer() {
 
   return (
     <>
-    <footer className="bg-brand-navy text-slate-300 py-8 border-t border-brand-blue/30 pb-16 md:pb-8">
+    <footer className="bg-brand-navy text-slate-300 py-8 border-t border-brand-blue/30">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
@@ -115,12 +115,14 @@ export function Footer() {
 
       </div>
 
-        <div className="border-t border-brand-blue/20 pt-8 text-center text-xs font-bold tracking-wider text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4 uppercase p ,x-30 px-4">
+      <div className="border-t border-brand-blue/20 mt-8 pt-6">
+        <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-bold tracking-wider text-slate-500 uppercase">
           <p>&copy; {new Date().getFullYear()} HIDRO CIPTA PERKASA.</p>
           <div className="flex gap-6">
             <button onClick={() => setModal("privacy")} className="hover:text-brand-light transition-colors">PRIVACY POLICY</button>
           </div>
         </div>
+      </div>
     </footer>
 
     {/* Privacy Policy Bottom Sheet */}
